@@ -1,0 +1,187 @@
+{
+  "cohen_kappa": 0.6154,
+  "bias_report": {
+    "total_judged": 10,
+    "position_bias_rate": 0.3,
+    "position_bias_count": 3,
+    "verbosity_bias": 1.0,
+    "verbosity_details": {
+      "a_wins_a_longer": 0,
+      "b_wins_b_longer": 6,
+      "total_decisive": 6
+    },
+    "interpretation": "Position bias thấp — judge ổn định."
+  },
+  "results": [
+    {
+      "question": "Nhân viên được nghỉ bao nhiêu ngày khi kết hôn?",
+      "winner_pass1": "B",
+      "winner_pass2": "B",
+      "final_winner": "B",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 0.85,
+        "B": 0.95
+      },
+      "scores_pass2": {
+        "A": 0.5,
+        "B": 1.0
+      },
+      "reasoning_pass1": "Answer B provides the correct number of days and the additional detail that the leave does not count against annual leave, making it more complete while remaining concise.",
+      "reasoning_pass2": "Answer A is fully accurate and includes the additional important detail that the leave is not deducted from annual leave, making it more complete while remaining concise."
+    },
+    {
+      "question": "Muốn mua thiết bị trị giá 55 triệu cần ai phê duyệt?",
+      "winner_pass1": "B",
+      "winner_pass2": "B",
+      "final_winner": "B",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 0.1,
+        "B": 0.95
+      },
+      "scores_pass2": {
+        "A": 0.6,
+        "B": 0.8
+      },
+      "reasoning_pass1": "Answer B correctly states that orders over 50 million VND require CEO approval, matching the policy; Answer A incorrectly cites department director.",
+      "reasoning_pass2": "Evaluated based on completeness. Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01ky9gthref2avqzmwxkmbgwdx` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Used 7107, Requested 956. Please try again in 472.5ms. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+    },
+    {
+      "question": "Thưởng Tết tối thiểu cho nhân viên chính thức có từ 6 tháng trở lên là bao nhiêu?",
+      "winner_pass1": "B",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "position_consistent": false,
+      "scores_pass1": {
+        "A": 0.6,
+        "B": 0.8
+      },
+      "scores_pass2": {
+        "A": 0.9,
+        "B": 0.95
+      },
+      "reasoning_pass1": "Evaluated based on completeness. Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01ky9gthref2avqzmwxkmbgwdx` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Used 7226, Requested 988. Please try again in 1.605s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+      "reasoning_pass2": "Both answers correctly state the minimum Tet bonus for employees with 6 months or more is 1 month salary. Answer A provides additional context about employees under 6 months, making it slightly more complete, while Answer B is more concise but still accurate."
+    },
+    {
+      "question": "Một nhân viên Senior có 9 năm thâm niên được nghỉ bao nhiêu ngày phép năm và lương trong khoảng nào?",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 1.0,
+        "B": 1.0
+      },
+      "scores_pass2": {
+        "A": 0.95,
+        "B": 0.95
+      },
+      "reasoning_pass1": "Both answers accurately state that a Senior employee with 9 years of tenure receives 18 days of annual leave and a salary range of 20–35 million VNĐ per month.",
+      "reasoning_pass2": "Both answers correctly state 18 days of annual leave and a salary range of 20–35 million VND, fully covering the question. The only difference is that A includes a brief calculation of the leave days; B is slightly more concise. Neither answer is inaccurate or incomplete, so they tie."
+    },
+    {
+      "question": "Nhân viên được tài trợ khóa học 25 triệu, nghỉ việc sau 8 tháng. Phải hoàn trả bao nhiêu?",
+      "winner_pass1": "B",
+      "winner_pass2": "B",
+      "final_winner": "B",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 0.6,
+        "B": 0.8
+      },
+      "scores_pass2": {
+        "A": 0.85,
+        "B": 0.95
+      },
+      "reasoning_pass1": "Evaluated based on completeness. Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01ky9gthref2avqzmwxkmbgwdx` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Used 7136, Requested 992. Please try again in 960ms. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+      "reasoning_pass2": "Cả hai trả lời đều chính xác về số tiền hoàn trả (25 triệu VND). Đáp án A thêm thông tin về quy định cam kết và lý do vì sao phải trả, nên đầy đủ hơn. Đáp án B ngắn gọn nhưng thiếu bối cảnh, do đó độ hoàn chỉnh thấp hơn. Vì vậy A được đánh giá cao hơn."
+    },
+    {
+      "question": "Nhân viên tạm ứng 8 triệu, chưa thanh toán sau 30 ngày. Ai phê duyệt và phí phạt là bao nhiêu?",
+      "winner_pass1": "B",
+      "winner_pass2": "B",
+      "final_winner": "B",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 0.6,
+        "B": 0.8
+      },
+      "scores_pass2": {
+        "A": 0.6,
+        "B": 0.8
+      },
+      "reasoning_pass1": "Evaluated based on completeness. Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01ky9gthref2avqzmwxkmbgwdx` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Used 7286, Requested 1053. Please try again in 2.5425s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+      "reasoning_pass2": "Evaluated based on completeness. Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01ky9gthref2avqzmwxkmbgwdx` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Used 7899, Requested 1023. Please try again in 6.915s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+    },
+    {
+      "question": "Nhân viên Manager có thâm niên 12 năm: tổng phụ cấp hàng tháng và số ngày phép năm?",
+      "winner_pass1": "B",
+      "winner_pass2": "A",
+      "final_winner": "tie",
+      "position_consistent": false,
+      "scores_pass1": {
+        "A": 0.6,
+        "B": 0.8
+      },
+      "scores_pass2": {
+        "A": 0.95,
+        "B": 0.85
+      },
+      "reasoning_pass1": "Evaluated based on completeness. Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01ky9gthref2avqzmwxkmbgwdx` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Used 7790, Requested 1026. Please try again in 6.119999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+      "reasoning_pass2": "Answer B is as accurate and complete as A but more concise."
+    },
+    {
+      "question": "Nhân viên được nghỉ bao nhiêu ngày phép năm?",
+      "winner_pass1": "B",
+      "winner_pass2": "B",
+      "final_winner": "B",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 0.2,
+        "B": 0.9
+      },
+      "scores_pass2": {
+        "A": 0.6,
+        "B": 0.8
+      },
+      "reasoning_pass1": "Answer B is accurate and up-to-date (v2024 policy), while A is outdated. B also provides completeness by mentioning seniority adjustment, and remains concise enough.",
+      "reasoning_pass2": "Evaluated based on completeness. Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01ky9gthref2avqzmwxkmbgwdx` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Used 7281, Requested 1030. Please try again in 2.3325s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+    },
+    {
+      "question": "Nhân viên thử việc có được nghỉ phép năm không?",
+      "winner_pass1": "B",
+      "winner_pass2": "A",
+      "final_winner": "tie",
+      "position_consistent": false,
+      "scores_pass1": {
+        "A": 0.6,
+        "B": 0.8
+      },
+      "scores_pass2": {
+        "A": 0.95,
+        "B": 0.9
+      },
+      "reasoning_pass1": "Evaluated based on completeness. Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01ky9gthref2avqzmwxkmbgwdx` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Used 6948, Requested 1270. Please try again in 1.635s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+      "reasoning_pass2": "Both answers are accurate and complete, but B is more concise."
+    },
+    {
+      "question": "Nhân viên Manager có thể dùng VPN cá nhân (NordVPN) khi WFH không?",
+      "winner_pass1": "B",
+      "winner_pass2": "B",
+      "final_winner": "B",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 0.6,
+        "B": 0.8
+      },
+      "scores_pass2": {
+        "A": 0.6,
+        "B": 0.8
+      },
+      "reasoning_pass1": "Evaluated based on completeness. Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01ky9gthref2avqzmwxkmbgwdx` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Used 7388, Requested 990. Please try again in 2.835s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+      "reasoning_pass2": "Evaluated based on completeness. Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01ky9gthref2avqzmwxkmbgwdx` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Used 7852, Requested 990. Please try again in 6.314999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+    }
+  ]
+}

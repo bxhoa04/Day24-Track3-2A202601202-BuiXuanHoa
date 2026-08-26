@@ -41,7 +41,7 @@ def build_pipeline():
     from src.m5_enrichment import enrich_chunks
     from config import RERANK_TOP_K
 
-    print("\n[1/3] Chunking + enriching documents...")
+    print("\n[1/3] Chunking documents...")
     t0 = time.time()
     docs = load_documents()
     all_chunks = []
@@ -53,12 +53,7 @@ def build_pipeline():
                 "metadata": {**child.metadata, "parent_id": child.parent_id},
             })
 
-    enriched = enrich_chunks(all_chunks)
-    if enriched:
-        all_chunks = [{"text": e.enriched_text, "metadata": e.auto_metadata} for e in enriched]
-        print(f"  ✓ Enriched {len(enriched)} chunks ({time.time()-t0:.1f}s)")
-    else:
-        print(f"  ✓ Using {len(all_chunks)} raw chunks (M5 not implemented or no API key)")
+    print(f"  ✓ Using {len(all_chunks)} hierarchical chunks ({time.time()-t0:.1f}s)")
 
     print("\n[2/3] Indexing (BM25 + Dense)...")
     t0 = time.time()
@@ -75,20 +70,24 @@ def build_pipeline():
 
 
 def run_query(q: str, search, reranker, top_k: int) -> tuple[str, list[str]]:
-    from config import OPENAI_API_KEY
+    from config import OPENAI_API_KEY, LLM_API_KEY, LLM_BASE_URL, LLM_MODEL
 
     results = search.search(q)
     docs    = [{"text": r.text, "score": r.score, "metadata": r.metadata} for r in results]
     reranked = reranker.rerank(q, docs, top_k=top_k)
     contexts = [r.text for r in reranked] if reranked else [r.text for r in results[:3]]
 
-    if OPENAI_API_KEY and contexts:
+    api_key = LLM_API_KEY or OPENAI_API_KEY
+    if api_key and contexts:
         try:
             from openai import OpenAI
-            client = OpenAI()
+            if LLM_BASE_URL:
+                client = OpenAI(api_key=api_key, base_url=LLM_BASE_URL)
+            else:
+                client = OpenAI(api_key=api_key)
             ctx = "\n\n".join(contexts)
             resp = client.chat.completions.create(
-                model="gpt-4o-mini",
+                model=LLM_MODEL,
                 messages=[
                     {"role": "system", "content": "Trả lời CHỈ dựa trên context. Nếu không có → nói 'Không tìm thấy.'"},
                     {"role": "user",   "content": f"Context:\n{ctx}\n\nCâu hỏi: {q}"},
